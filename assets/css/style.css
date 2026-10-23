@@ -1,0 +1,643 @@
+/* ==========================================================
+   流圧整体院 体質改善ダイエット LP
+   Figma: LP / 流圧整体院 (node 828:234) — 1920w / 700px column
+   ========================================================== */
+
+:root {
+  --c-accent: #f39f88;
+  --c-text: #736357;
+  --c-text-dark: #3a3a3a;
+  --c-heading: #4b4f58;
+  --c-border: #e5e5e5;
+
+  --col: 700px;        /* content column (incl. 10px side padding) */
+  --col-wide: 800px;   /* 成功する理由 section */
+
+  /* vertical rhythm (desktop values from Figma, shrink on narrow screens) */
+  --gap-xl: clamp(56px, 12vw, 90px);
+  --gap-lg: clamp(40px, 9vw, 65px);
+  --gap-md: clamp(28px, 6vw, 50px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--c-text);
+  font-family: "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+.lp {
+  width: 100%;
+}
+
+/* ---------- common ---------- */
+
+.sec {
+  width: 100%;
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.divider {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.sec__title {
+  margin-top: 35px;
+  color: var(--c-accent);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sec__title--lg {
+  font-size: 32px;
+}
+
+.sub__title {
+  color: var(--c-heading);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.photo {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.checklist {
+  padding: 0;
+  list-style: none;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.checklist li + li {
+  margin-top: 12px;
+}
+
+.checklist li::before {
+  /* fa-check-circle (Font Awesome 5 Free, CC BY 4.0) */
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--c-accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ---------- FV ---------- */
+
+.fv {
+  width: 100%;
+  max-width: 614px;
+  margin: 0 auto;
+}
+
+.fv img {
+  width: 100%;
+}
+
+/* ---------- LINE CTA ---------- */
+
+.cta {
+  width: 100%;
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: 0 10px;
+  color: var(--c-text-dark);
+  text-align: center;
+}
+
+.cta--first {
+  margin-top: 65px;
+}
+
+.cta__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* 矢印ぶんの余白を右にも取り、ボタンを中央に保つ */
+.cta__row::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 50px;
+}
+
+.cta__btn {
+  flex: 0 1 557px;
+  min-width: 0;
+  display: block;
+  text-decoration: none;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.cta--wide .cta__btn {
+  flex-basis: 608px;
+}
+
+.cta__btn img {
+  width: 100%;
+}
+
+.cta__btn:hover {
+  filter: brightness(1.04);
+}
+
+.cta__btn:active {
+  filter: brightness(0.95);
+}
+
+/* 参考LPと同じ「金色の矢印が右へスライドして消える」動き */
+.cta__arrow {
+  flex: 0 0 auto;
+  width: 50px;
+  height: auto;
+  aspect-ratio: 55 / 59;
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.15));
+  animation: cta-arrow-nudge 3s linear infinite;
+}
+
+@keyframes cta-arrow-nudge {
+  0% {
+    opacity: 0;
+    transform: translateX(-3px);
+  }
+  6% {
+    opacity: 1;
+    transform: translateX(-3px);
+  }
+  78% {
+    opacity: 1;
+    transform: translateX(6px);
+  }
+  86% {
+    opacity: 0;
+    transform: translateX(7px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta__arrow {
+    animation: none;
+  }
+}
+
+.cta__lead {
+  margin-top: 49px;
+  font-size: 15px;
+  line-height: 24.75px;
+}
+
+.cta__sub {
+  margin-top: 18px;
+  font-size: 13.7px;
+  line-height: 24.75px;
+}
+
+.cta__price {
+  margin-top: 18px;
+  font-size: 13.5px;
+  line-height: 24.75px;
+}
+
+.cta__price span {
+  font-size: 23.5px;
+}
+
+/* ---------- Before / After ---------- */
+
+.ba {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: var(--col);
+  margin: 53px auto 0;
+  padding: 0 10px;
+}
+
+.ba img {
+  width: 459px;
+}
+
+/* ---------- CONCEPT ---------- */
+
+.concept {
+  margin-top: var(--gap-xl);
+}
+
+.concept__title {
+  margin-top: 38px;
+  color: var(--c-accent);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36.4px;
+}
+
+.concept p {
+  color: var(--c-text-dark);
+  font-size: 16px;
+  line-height: 28.8px;
+}
+
+.concept__title + p {
+  margin-top: 23px;
+}
+
+.concept p + p {
+  margin-top: 28px;
+}
+
+/* ---------- Voice ---------- */
+
+.voice {
+  margin-top: clamp(64px, 16vw, 127px);
+}
+
+.voice__grid {
+  width: 100%;
+  max-width: 685px;
+  margin: 0 auto;
+}
+
+.voice .checklist {
+  margin-top: 16px;
+}
+
+/* ---------- 3つのこだわり ---------- */
+
+.kodawari {
+  margin-top: var(--gap-xl);
+}
+
+.kodawari .sub__title {
+  margin-top: 56px;
+}
+
+.kodawari .sec__title + .sub__title {
+  margin-top: 20px;
+}
+
+.kodawari .photo {
+  margin-top: 15px;
+}
+
+.kodawari .text {
+  margin-top: 18px;
+}
+
+.kodawari__text--indent {
+  padding-left: 15px;
+}
+
+/* ---------- スタッフ紹介 ---------- */
+
+.staff {
+  margin-top: var(--gap-xl);
+}
+
+.staff__item .sub__title {
+  margin-top: 20px;
+}
+
+.staff__item--rep {
+  margin-top: clamp(72px, 18vw, 130px);
+}
+
+.staff__item--rep .sub__title {
+  margin-top: 0;
+}
+
+.staff__photo {
+  width: 177px;
+  margin: 21px auto 0;
+  border-radius: 50%;
+}
+
+.staff__photo--lg {
+  width: 185px;
+  margin-top: 25px;
+}
+
+.staff__item .checklist {
+  margin-top: 68px;
+  padding-left: 6px;
+}
+
+.staff__item--rep .checklist {
+  margin-top: 36px;
+  padding-left: 0;
+}
+
+.staff__item .text {
+  margin-top: 35px;
+}
+
+.staff__item--rep .text {
+  margin-top: 29px;
+}
+
+/* ---------- 店舗情報 ---------- */
+
+.store {
+  margin-top: var(--gap-xl);
+}
+
+.store .photo {
+  margin-top: 21px;
+}
+
+.store__list {
+  margin-top: 40px;
+}
+
+.store__list li + li {
+  margin-top: 14.6px;
+}
+
+.store__map {
+  position: relative;
+  margin-top: clamp(48px, 13vw, 100px);
+  height: 400px;
+  overflow: hidden;
+}
+
+.store__map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- 特典（BOOK） ---------- */
+
+.bonus {
+  margin-top: 43px;
+  padding: 0 10px;
+}
+
+.book {
+  width: 302px;
+  margin: 0 auto;
+}
+
+.bonus + .cta {
+  margin-top: 51px;
+}
+
+.cta--wide .cta__lead {
+  margin-top: 51px;
+}
+
+/* ---------- 成功する理由 ---------- */
+
+.reason {
+  width: 100%;
+  max-width: var(--col-wide);
+  margin: clamp(48px, 10vw, 69px) auto 0;
+  padding: 0 10px 142px;
+}
+
+.reason__box {
+  margin-top: 19px;
+  padding: 32px 25px 161px 22px;
+  border: 2px solid var(--c-border);
+  border-radius: 4px;
+}
+
+.reason__title {
+  color: var(--c-accent);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 33.8px;
+}
+
+.reason__img {
+  margin: 0 auto;
+}
+
+.reason__item .text {
+  margin-top: 20px;
+}
+
+.reason__item + .reason__item {
+  margin-top: 87px;
+}
+
+.reason__item:nth-child(3) {
+  margin-top: 102px;
+}
+
+.reason__item:nth-child(4) {
+  margin-top: 117px;
+}
+
+.reason__img--1 {
+  width: 569px;
+  margin-top: 42px;
+}
+
+.reason__img--2 {
+  width: 576px;
+  margin-top: 50px;
+}
+
+.reason__img--2 + .text {
+  margin-top: 73px;
+}
+
+.reason__img--3 {
+  width: 512px;
+  margin-top: 38px;
+}
+
+.reason__img--3 + .text {
+  margin-top: 37px;
+}
+
+.reason__img--4 {
+  width: 400px;
+  margin-top: 29px;
+}
+
+.reason__img--4 + .text {
+  margin-top: 43px;
+}
+
+.bonus--in-box {
+  margin-top: 39px;
+  padding: 0;
+}
+
+.cta--last {
+  padding: 0;
+}
+
+.bonus--in-box + .cta--last {
+  margin-top: 109px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  .sec__title,
+  .concept__title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .sec__title--lg {
+    font-size: 24px;
+  }
+
+  .sub__title {
+    font-size: 16px;
+  }
+
+  .text,
+  .concept p {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .checklist li {
+    font-size: 15px;
+  }
+
+  .reason__box {
+    padding: 24px 14px 72px;
+  }
+
+  .reason__title {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .reason__item + .reason__item {
+    margin-top: 56px;
+  }
+
+  .reason__img--1,
+  .reason__img--2,
+  .reason__img--3,
+  .reason__img--4 {
+    margin-top: 20px;
+  }
+
+  .reason__img--2 + .text,
+  .reason__img--3 + .text,
+  .reason__img--4 + .text {
+    margin-top: 20px;
+  }
+
+  .bonus--in-box + .cta--last {
+    margin-top: 48px;
+  }
+
+  .reason {
+    padding-bottom: 64px;
+  }
+
+  .staff__item .checklist {
+    margin-top: 32px;
+  }
+
+  .store__map {
+    height: 300px;
+  }
+
+  /* スマホは矢印＋ボタンで横幅いっぱいに使う（参考LPと同じ） */
+  .cta__row {
+    gap: 1.2%;
+  }
+
+  .cta__row::after {
+    display: none;
+  }
+
+  .cta__arrow {
+    width: 7.2%;
+    min-width: 26px;
+  }
+
+  .cta__lead {
+    margin-top: 28px;
+    font-size: clamp(11px, 3.45vw, 15px);
+    white-space: nowrap;
+  }
+
+  .cta--wide .cta__lead {
+    margin-top: 28px;
+  }
+
+  .cta__sub,
+  .cta__price {
+    margin-top: 10px;
+  }
+
+  .cta__price {
+    font-size: clamp(11px, 3.3vw, 13.5px);
+    white-space: nowrap;
+  }
+
+  .cta__price span {
+    font-size: clamp(16px, 5.2vw, 23.5px);
+  }
+}
