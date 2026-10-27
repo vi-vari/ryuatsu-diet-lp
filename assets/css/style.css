@@ -236,24 +236,24 @@ ul {
 
 .cta__lead {
   margin-top: 49px;
-  font-size: 15px;
-  line-height: 24.75px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .cta__sub {
-  margin-top: 18px;
-  font-size: 13.7px;
-  line-height: 24.75px;
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .cta__price {
-  margin-top: 18px;
-  font-size: 13.5px;
-  line-height: 24.75px;
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .cta__price span {
-  font-size: 23.5px;
+  font-size: 25px;
 }
 
 /* 予約フォームボタン：画像の外側に影の余白があるため、ボタン本体の幅をLINEボタンとそろえる */
@@ -638,7 +638,17 @@ ul {
     margin-top: 28px;
   }
 
+  .cta__lead,
   .cta__sub,
+  .cta__price {
+    line-height: 24.75px;
+  }
+
+  .cta__sub {
+    margin-top: 20px;
+    font-size: 13.7px;
+  }
+
   .cta__price {
     margin-top: 10px;
   }
