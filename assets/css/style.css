@@ -256,6 +256,17 @@ ul {
   font-size: 23.5px;
 }
 
+/* 予約フォームボタン：画像の外側に影の余白があるため、ボタン本体の幅をLINEボタンとそろえる */
+.cta__row--reserve {
+  margin-top: 28px;
+}
+
+.cta__btn--reserve img {
+  width: 104.6%;
+  max-width: none;
+  margin-left: -2.3%;
+}
+
 /* ---------- Before / After ---------- */
 
 .ba {
@@ -639,5 +650,14 @@ ul {
 
   .cta__price span {
     font-size: clamp(16px, 5.2vw, 23.5px);
+  }
+
+  /* 枠の中にある最後のCTAは横幅が狭いので一段小さく */
+  .cta--last .cta__price {
+    font-size: clamp(10px, 3vw, 13.5px);
+  }
+
+  .cta--last .cta__price span {
+    font-size: clamp(14px, 4.6vw, 23.5px);
   }
 }
